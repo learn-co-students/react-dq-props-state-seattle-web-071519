@@ -40,9 +40,9 @@ export default class MasterHog extends Component {
         </div>
         
         <ul className="hoglist">
-          <BabyHog />
-          <BabyHog />
-          <BabyHog />
+          <BabyHog eyecolor={this.state.eyeColor} babyNum={0} />
+          <BabyHog eyecolor={this.state.eyeColor} babyNum={1} />
+          <BabyHog eyecolor={this.state.eyeColor} babyNum={2} />
         </ul>
 
       </div>
