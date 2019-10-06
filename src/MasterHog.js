@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Master from './assets/master-hog.png'
 import BabyHog from './BabyHog'
+import { SSL_OP_MSIE_SSLV2_RSA_PADDING } from 'constants'
 // import offspring from './db.js'
 
 export default class MasterHog extends Component {
@@ -9,6 +10,23 @@ export default class MasterHog extends Component {
     super()
     this.state = {
       eyeColor: "blue",
+      babies: [
+        {
+          name: "Katana",
+          weight: 113,
+          hobby: "being kawaii"
+        },
+        {
+          name: "Stanley",
+          weight: 145,
+          hobby: "league of legends"
+        },
+        {
+          name: "Scately",
+          weight: 2600,
+          hobby: "watching animal porn"
+        }
+      ]
     }
   }
 
@@ -19,6 +37,9 @@ export default class MasterHog extends Component {
     })
   }
 
+  renderBabyHogs = () => {
+    return this.state.babies.map((baby) => <BabyHog baby={baby} eyeColor={this.state.eyeColor}/>)
+  }
 
   render() {
     return (
@@ -40,9 +61,7 @@ export default class MasterHog extends Component {
         </div>
         
         <ul className="hoglist">
-          <BabyHog />
-          <BabyHog />
-          <BabyHog />
+          {this.renderBabyHogs()}
         </ul>
 
       </div>
